@@ -32,7 +32,7 @@ function ig_header(){
   return ["header" => $header,"csrftoken" => $cookie,"rur" => getstr($header,"rur=",";"),"mid" => getstr($header,"mid=",";")];
   }
  function cek_user($user){
- 	$get = json_decode(file_get_contents("https://api.zonkploit.com/ig/user-info/".$user),1);
+ 	$get = json_decode(file_get_contents("https://followersgratis.web.id/cek-user-id-instagram/".$user),1);
  	if ($get["error"] == 1) {
  		return "false";
  	}else{
@@ -140,7 +140,7 @@ function randd($length = 10) {
 }
 function getmid(){
   $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, "https://www.instagram.com/accounts/web_create_ajax/");
+  curl_setopt($ch, CURLOPT_URL, "https://www.instagram.com/accounts/web_create_ajax/attempt/");
   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -164,7 +164,7 @@ function getmid(){
 function register(){
 $ig_header = ig_header();
 $ch = curl_init(); 
-curl_setopt($ch, CURLOPT_URL, "https://www.instagram.com/accounts/web_create_ajax/"); 
+curl_setopt($ch, CURLOPT_URL, "https://www.instagram.com/accounts/web_create_ajax/attempt/"); 
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 0);
